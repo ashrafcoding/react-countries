@@ -1,3 +1,11 @@
+:root {
+  --night-dbl:hsl(209, 23%, 22%);
+  --night-vdbl: hsl(207, 26%, 17%);
+  --light-vdbl: hsl(200, 15%, 8%);
+  --light-dgr: hsl(0, 0%, 52%);
+  --light-vlgr: hsl(0, 0%, 98%);
+  --mutual: hsl(0, 0%, 100%);
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +19,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
