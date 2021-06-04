@@ -1,7 +1,0 @@
-.head-wrap {
-    display: flex;
-    justify-content: space-between;
-}
-.head-wrap > * {
-    display: inline-block;
-}
