@@ -1,13 +1,23 @@
 .head-wrap {
     display: flex;
     justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
 }
-.head-wrap > * {
-    display: inline-block;
-}
-.content-wrap {
+
+.content-search-wrap {
     display: flex;
     flex-wrap: wrap;
-    width: 70%;
+    width: 80%;
     margin: 10px auto;
+    gap: 30px;
+    justify-content: space-between;
+}
+.flter-wrap select {
+    width: 130px;
+    padding: 5px ;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
 }

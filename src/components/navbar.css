@@ -12,6 +12,7 @@
 }
 .theme {
     display: flex;
+    cursor: pointer;
 }
 .theme > * {
     align-self: center;

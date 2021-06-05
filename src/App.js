@@ -6,6 +6,8 @@ import axios from "axios";
 import Country from "./components/Country";
 import Search from "./components/Search";
 import "./App.css";
+import themeContext ,{themes} from "./ThemeContext"
+
 
 function App() {
   const [countries, setCountries] = useState();
@@ -44,10 +46,26 @@ function App() {
     setSwitchPage(!switchPage);
     setSpecificCountry(country);
   }
+  const [theme, setTheme] = useState(themes.dark)
+  const [body, setBody] = useState({background: "var(--night-vdbl)"})
+  const toggleTheme = ()=>{
+    theme === themes.dark
+    ? setTheme(themes.light)
+     
+    : setTheme(themes.dark)
+    theme === themes.dark 
+    ? setBody({background: "var(--light-vlgr)"})
+    :setBody({background: "var(--night-vdbl)"})
+    
+  }
+  
+  console.log(body);
 
   return (
     <>
-      <Navbar />
+    <themeContext.Provider value={theme}>
+      <div  style={body}>
+      <Navbar toggle= {toggleTheme}/>
       <Router>
         <Route path="/" component={this} />
         <Route path="/country-detail/:params">
@@ -57,7 +75,7 @@ function App() {
           <div className="head-wrap">
             <Search search={handleSearch} />
             <div className="flter-wrap">
-              <select name="filter" id="" className="filter-bar">
+              <select name="filter" id="" className="filter-bar" style={theme}>
                 {countries &&
                   countries.map((c, i) => {
                     return (
@@ -70,7 +88,7 @@ function App() {
             </div>
           </div>
         )}
-        <div className="content-wrap">
+        <div className="content-search-wrap">
           {filterSearch &&
             filterSearch.map((c, i) => {
               return (
@@ -81,6 +99,8 @@ function App() {
                   population={c.population}
                   region={c.region}
                   capital={c.capital}
+                  handle={handleSwitch}
+                  country={c}
                 />
               );
             })}
@@ -102,6 +122,9 @@ function App() {
             })}
         </div>
       </Router>
+      </div>
+    </themeContext.Provider>
+    
     </>
   );
 }

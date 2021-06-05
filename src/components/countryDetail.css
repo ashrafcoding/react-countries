@@ -1,0 +1,59 @@
+.card-container {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex; 
+    flex-direction: column; 
+    flex-wrap: wrap;
+    gap: 100px;
+}
+.head-button button {
+    width: 100px;
+    height: 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+.head-button button > i {
+    padding-right: 10px;
+}
+.content-wrap {
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-between;
+    justify-content: space-between;
+    align-self: center;
+}
+.content-wrap > * {
+    flex: 1 0 200px;
+}
+.content-wrap .flag {
+    display: flex;
+    
+}
+.content-wrap .flag img{
+    max-width: 100%;
+    
+    align-self: center;
+}
+.detail-wrap > h2 {
+    padding: 20px 0;
+}
+.content-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.content-details > * {
+    flex: 1 0 100px;
+}
+.content-details p {
+    display: inline-block;
+    font-size: 14px;
+}

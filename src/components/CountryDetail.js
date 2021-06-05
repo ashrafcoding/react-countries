@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import themeContext from "../ThemeContext";
+import "./countryDetail.css";
 
 function CountryDetail(props) {
   const { handle, country } = props;
@@ -8,12 +10,15 @@ function CountryDetail(props) {
 
     handleSwitch(country);
   };
+  const themes = useContext(themeContext);
 
   return (
-    <div className="card-container">
-      <div className="head-button">
+    <>
+   
+    <div className="card-container" style={themes}>
+    <div className="head-button" >
         <Link to="/">
-          <button onClick={change}>
+          <button onClick={change} style={themes}>
             <i className="fas fa-long-arrow-alt-left"></i>Back
           </button>
         </Link>
@@ -23,28 +28,29 @@ function CountryDetail(props) {
           <img src={country.flag} alt="" />
         </div>
         <div className="detail-wrap">
-          <h2>{}</h2>
+          <h2>{ country.name}</h2>
+          <div className="content-details">
           <div className="left-detail">
-            <h4>
+            <p>
               <span>Native Name :</span>
               {country.nativeName}
-            </h4>
-            <h4>
+            </p>
+            <p>
               <span>Population :</span>
               {country.population}
-            </h4>
-            <h4>
+            </p>
+            <p>
               <span>Region :</span>
               {country.region}
-            </h4>
-            <h4>
+            </p>
+            <p>
               <span>Sub Region</span>
               {country.subregion}
-            </h4>
-            <h4>
+            </p>
+            <p>
               <span>Capital</span>
               {country.capital}
-            </h4>
+            </p>
           </div>
           <div className="right-detail">
             <p>
@@ -60,6 +66,7 @@ function CountryDetail(props) {
               {country.languages[0].name}
             </p>
           </div>
+          </div>
           <div className="border-countries">
             <span>Border Countries :</span>
             <button>{country.borders[0]}</button>
@@ -69,6 +76,7 @@ function CountryDetail(props) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
