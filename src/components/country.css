@@ -4,7 +4,7 @@
     border-radius: 10px;
 }
 .country-card img  {
-   max-width: 100%;
+   width: 100%;
 }
 .country-card .info {
     padding: 20px;
@@ -17,4 +17,11 @@
     padding-bottom: 5px;
     text-decoration: none;
     border: none;
+}
+.country-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
 }

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import themeContext, {themes} from "../ThemeContext";
+import themeContext from "../ThemeContext";
 import './navbar.css'
 
 function Navbar(props) {
@@ -9,9 +9,9 @@ function Navbar(props) {
     <div className="navbar" style={themes} >
       <div className="container">
         <h3>Where in the world?</h3>
-        <div className="theme" onClick={props.toggle}>
-          <div className="theme-icon far fa-moon"></div>
-          <h5>Dark Mode</h5>
+        <div className="theme" onClick={props.toggle}>         
+          <div className={themes.color === "var(--mutual)" ? "theme-icon far fa-sun" : "theme-icon far fa-moon"}></div>
+        <h5>{themes.color === "var(--mutual)" ? "Light Mode" : "Dark Mode"}</h5>
         </div>
       </div>
     </div>
